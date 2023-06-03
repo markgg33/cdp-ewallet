@@ -3,6 +3,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:wallet_test/pages/send_page.dart';
+import 'package:wallet_test/pages/pay_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -164,17 +165,26 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          color: Colors.indigoAccent[200],
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Icon(
-                          Icons.payment_rounded,
-                          size: 50,
-                          color: Colors.white,
+                      GestureDetector(
+                            onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (BuildContext context){
+                                return PayPage();
+                              },),
+                            );
+                          },
+                          child: Container(
+                          height: 70,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.indigoAccent[200],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Icon(
+                            Icons.payment_rounded,
+                            size: 50,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       Container(
